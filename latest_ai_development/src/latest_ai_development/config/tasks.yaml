@@ -1,0 +1,36 @@
+ScrapeWebsiteContent:
+  agent_id: WebScraperAgent
+  description: >
+    Visit the website at {url} and collect the full HTML code and all CSS styles.
+    Make sure to include both inline styles and external CSS files referenced by the page.
+    Separate HTML and CSS output clearly.
+  expected_output: >
+    1. Raw HTML code of the main page
+    2. List of all extracted CSS sources
+    3. Full CSS content from both inline and external sources
+
+AnalyzeWebCode:
+  agent_id: CodeAnalyzerAgent
+  description: >
+    Analyze the provided HTML and CSS code from {url} for best practices, structure, and design quality.
+    Look for layout issues, bad tag nesting, broken tags, missing accessibility features, repeated styles,
+    and overall responsiveness. Review the CSS for consistency, clarity, and device adaptability.
+  expected_output: >
+    A comprehensive code review containing:
+    - Strengths in structure and styling
+    - Structural or semantic problems
+    - CSS flaws or repetition
+    - Accessibility issues
+    - Suggestions for improvement
+
+GenerateImprovementReport:
+  agent_id: reporting_analyst
+  description: >
+    Combine all findings from the HTML and CSS analysis of {url} into one report.
+    Present it in a simple format that highlights strengths, key issues, and recommendations.
+    Keep the tone constructive and beginner-friendly.
+  expected_output: >
+    Developer-friendly report with:
+    1. Summary of strengths
+    2. Key HTML and CSS issues
+    3. Recommendations for improving code clarity, accessibility, and style
